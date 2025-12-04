@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Mercadinho do Seu Zé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .tech-item h4 {
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .color-item {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin: 0 auto 10px;
+            border: 2px solid #ddd;
+        }
+
+        .primary { background-color: #4CAF50; }
+        .secondary { background-color: #45a049; }
+        .accent { background-color: #27ae60; }
+        .text { background-color: #2c3e50; }
+        .background { background-color: #f5f5f5; }
+
+        .directory-tree {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .architecture-diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+        }
+
+        .layer {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .frontend-layer { background: #e8f5e8; color: #2c5530; }
+        .api-layer { background: #fff3cd; color: #856404; }
+        .database-layer { background: #d1ecf1; color: #0c5460; }
+
+        .typography-sample {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .typography-sample h1 { font-size: 2em; color: #2c3e50; }
+        .typography-sample h2 { font-size: 1.5em; color: #34495e; }
+        .typography-sample p { color: #666; margin: 10px 0; }
+
+        @media print {
+            body { font-size: 12px; }
+            .section { page-break-inside: avoid; }
+            .header { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛒 Mercadinho do Seu Zé</h1>
+            <p>Documentação Técnica do Sistema</p>
+            <p>Sistema de Gerenciamento de Produtos</p>
+        </div>
+
+        <div class="section">
+            <h2>📋 Visão Geral do Projeto</h2>
+            <p>O <strong>Mercadinho do Seu Zé</strong> é um sistema web simples e intuitivo para gerenciamento de produtos de um pequeno mercado. O sistema permite adicionar, visualizar e excluir produtos de forma eficiente, com uma interface amigável e responsiva.</p>
+            
+            <h3>Objetivo Principal</h3>
+            <p>Proporcionar uma solução digital simples para pequenos comerciantes gerenciarem seu estoque de produtos, permitindo operações básicas de CRUD (Create, Read, Update, Delete) de forma intuitiva.</p>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Tecnologias Utilizadas</h2>
+            
+            <h3>Backend</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Node.js</h4>
+                    <p>Runtime JavaScript</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Express.js</h4>
+                    <p>Framework web</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Sequelize</h4>
+                    <p>ORM para banco de dados</p>
+                </div>
+                <div class="tech-item">
+                    <h4>MySQL/PostgreSQL</h4>
+                    <p>Banco de dados</p>
+                </div>
+            </div>
+
+            <h3>Frontend</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>HTML5</h4>
+                    <p>Estrutura da página</p>
+                </div>
+                <div class="tech-item">
+                    <h4>CSS3</h4>
+                    <p>Estilização e layout</p>
+                </div>
+                <div class="tech-item">
+                    <h4>JavaScript</h4>
+                    <p>Interatividade</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Fetch API</h4>
+                    <p>Comunicação com backend</p>
+                </div>
+            </div>
+
+            <h3>Ferramentas de Desenvolvimento</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Nodemon</h4>
+                    <p>Auto-reload do servidor</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Sequelize CLI</h4>
+                    <p>Migrations e seeders</p>
+                </div>
+                <div class="tech-item">
+                    <h4>dotenv</h4>
+                    <p>Variáveis de ambiente</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Identidade Visual</h2>
+            
+            <h3>Paleta de Cores</h3>
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-box primary"></div>
+                    <strong>Verde Primário</strong><br>
+                    #4CAF50
+                </div>
+                <div class="color-item">
+                    <div class="color-box secondary"></div>
+                    <strong>Verde Secundário</strong><br>
+                    #45a049
+                </div>
+                <div class="color-item">
+                    <div class="color-box accent"></div>
+                    <strong>Verde Destaque</strong><br>
+                    #27ae60
+                </div>
+                <div class="color-item">
+                    <div class="color-box text"></div>
+                    <strong>Texto Principal</strong><br>
+                    #2c3e50
+                </div>
+                <div class="color-item">
+                    <div class="color-box background"></div>
+                    <strong>Fundo</strong><br>
+                    #f5f5f5
+                </div>
+            </div>
+
+            <h3>Conceito Visual</h3>
+            <p>A identidade visual utiliza tons de verde que remetem à natureza, frescor e confiança, características importantes para um mercado. O design é limpo e moderno, priorizando a usabilidade e legibilidade.</p>
+        </div>
+
+        <div class="section">
+            <h2>📝 Tipografia</h2>
+            
+            <div class="typography-sample">
+                <h1>Título Principal - Arial, sans-serif</h1>
+                <h2>Subtítulo - Arial, sans-serif</h2>
+                <p>Texto do corpo - Arial, sans-serif. Esta é a fonte padrão utilizada em todo o sistema, garantindo boa legibilidade em diferentes dispositivos e tamanhos de tela.</p>
+            </div>
+
+            <h3>Hierarquia Tipográfica</h3>
+            <ul class="feature-list">
+                <li><strong>H1 (2rem):</strong> Título principal do sistema</li>
+                <li><strong>H2 (1.5-1.8rem):</strong> Títulos de seções</li>
+                <li><strong>H3 (1.3-1.4rem):</strong> Subtítulos e nomes de produtos</li>
+                <li><strong>Corpo (1rem):</strong> Texto geral e descrições</li>
+                <li><strong>Pequeno (0.9rem):</strong> Informações secundárias</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🏗️ Arquitetura do Sistema</h2>
+            
+            <div class="architecture-diagram">
+                <div class="layer frontend-layer">
+                    <strong>FRONTEND</strong><br>
+                    HTML5 + CSS3 + JavaScript<br>
+                    Interface do usuário responsiva
+                </div>
+                <div style="text-align: center; margin: 10px 0;">↕️ HTTP/REST API</div>
+                <div class="layer api-layer">
+                    <strong>BACKEND API</strong><br>
+                    Node.js + Express.js<br>
+                    Controladores e Rotas
+                </div>
+                <div style="text-align: center; margin: 10px 0;">↕️ ORM (Sequelize)</div>
+                <div class="layer database-layer">
+                    <strong>BANCO DE DADOS</strong><br>
+                    MySQL/PostgreSQL<br>
+                    Armazenamento de produtos
+                </div>
+            </div>
+
+            <h3>Padrão Arquitetural</h3>
+            <p>O sistema segue o padrão <strong>MVC (Model-View-Controller)</strong> adaptado para aplicações web:</p>
+            <ul class="feature-list">
+                <li><strong>Model:</strong> Modelos Sequelize para representar dados</li>
+                <li><strong>View:</strong> Interface HTML/CSS/JS no frontend</li>
+                <li><strong>Controller:</strong> Controladores Express.js no backend</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⚙️ Funcionalidades</h2>
+            
+            <h3>Funcionalidades Principais</h3>
+            <ul class="feature-list">
+                <li><strong>Visualizar Produtos:</strong> Lista todos os produtos em cards organizados</li>
+                <li><strong>Adicionar Produto:</strong> Formulário para cadastrar novos produtos</li>
+                <li><strong>Excluir Produto:</strong> Remoção de produtos com confirmação</li>
+                <li><strong>Informações do Produto:</strong> Nome, preço, descrição e estoque</li>
+            </ul>
+
+            <h3>Funcionalidades Técnicas</h3>
+            <ul class="feature-list">
+                <li><strong>API RESTful:</strong> Endpoints para operações CRUD</li>
+                <li><strong>Fallback Local:</strong> Funciona mesmo sem conexão com API</li>
+                <li><strong>Design Responsivo:</strong> Adaptável a diferentes telas</li>
+                <li><strong>Validação de Dados:</strong> Campos obrigatórios no frontend</li>
+                <li><strong>Feedback Visual:</strong> Estados de loading e erro</li>
+            </ul>
+
+            <h3>Endpoints da API</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>GET /api/produtos</h4>
+                    <p>Listar produtos</p>
+                </div>
+                <div class="tech-item">
+                    <h4>POST /api/produtos</h4>
+                    <p>Criar produto</p>
+                </div>
+                <div class="tech-item">
+                    <h4>GET /api/produtos/:id</h4>
+                    <p>Buscar produto</p>
+                </div>
+                <div class="tech-item">
+                    <h4>DELETE /api/produtos/:id</h4>
+                    <p>Excluir produto</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📁 Estrutura de Diretórios</h2>
+            
+            <div class="directory-tree">
+mercadinho-do-seu-ze/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── database.js          # Configuração do banco
+│   │   ├── controllers/
+│   │   │   └── produtoController.js # Lógica de negócio
+│   │   ├── database/
+│   │   │   ├── migrations/          # Scripts de migração
+│   │   │   ├── models/              # Modelos Sequelize
+│   │   │   │   ├── index.js
+│   │   │   │   └── produtos.js
+│   │   │   └── seeders/             # Dados iniciais
+│   │   ├── routes/
+│   │   │   └── produtoRoutes.js     # Definição de rotas
+│   │   ├── app.js                   # Configuração Express
+│   │   └── server.js                # Servidor principal
+│   ├── .env                         # Variáveis de ambiente
+│   ├── .sequelizerc                 # Configuração Sequelize
+│   ├── package.json                 # Dependências Node.js
+│   └── package-lock.json
+└── frontend/
+    ├── index.html                   # Página principal
+    ├── styles.css                   # Estilos CSS
+    └── script.js                    # Lógica JavaScript
+            </div>
+
+            <h3>Descrição dos Componentes</h3>
+            <ul class="feature-list">
+                <li><strong>Controllers:</strong> Processam requisições e retornam respostas</li>
+                <li><strong>Models:</strong> Definem estrutura e relacionamentos dos dados</li>
+                <li><strong>Routes:</strong> Mapeiam URLs para controladores</li>
+                <li><strong>Migrations:</strong> Versionam mudanças no banco de dados</li>
+                <li><strong>Seeders:</strong> Populam banco com dados iniciais</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Como Executar</h2>
+            
+            <h3>Pré-requisitos</h3>
+            <ul class="feature-list">
+                <li>Node.js (versão 14 ou superior)</li>
+                <li>MySQL ou PostgreSQL</li>
+                <li>npm ou yarn</li>
+            </ul>
+
+            <h3>Instalação Backend</h3>
+            <div class="directory-tree">
+cd backend
+npm install
+cp .env.example .env  # Configure as variáveis
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+npm run dev
+            </div>
+
+            <h3>Instalação Frontend</h3>
+            <div class="directory-tree">
+cd frontend
+# Abrir index.html em um servidor local
+# ou usar Live Server no VS Code
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Considerações Técnicas</h2>
+            
+            <h3>Pontos Fortes</h3>
+            <ul class="feature-list">
+                <li>Interface simples e intuitiva</li>
+                <li>Código bem estruturado e organizado</li>
+                <li>Fallback para funcionamento offline</li>
+                <li>Design responsivo</li>
+                <li>Uso de tecnologias modernas</li>
+            </ul>
+
+            <h3>Melhorias Futuras</h3>
+            <ul class="feature-list">
+                <li>Implementar funcionalidade de edição de produtos</li>
+                <li>Adicionar sistema de autenticação</li>
+                <li>Implementar paginação para muitos produtos</li>
+                <li>Adicionar filtros e busca</li>
+                <li>Implementar upload de imagens dos produtos</li>
+                <li>Adicionar relatórios de estoque</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📞 Informações do Projeto</h2>
+            <p><strong>Nome:</strong> Mercadinho do Seu Zé</p>
+            <p><strong>Versão:</strong> 1.0.0</p>
+            <p><strong>Tipo:</strong> Sistema de Gerenciamento de Produtos</p>
+            <p><strong>Licença:</strong> JJL</p>
+            <p><strong>Data da Documentação:</strong> Dezembro 2024</p>
+        </div>
+    </div>
+</body>
+</html>
